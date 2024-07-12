@@ -1,0 +1,119 @@
+$primary-color: #0066ff;
+$secondary-color: #6c757d;
+$light-gray: #f8f9fa;
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: $light-gray;
+}
+
+.profile-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-header {
+    text-align: center;
+    margin-bottom: 20px;
+
+    h1 {
+        margin: 0;
+    }
+
+    h2 {
+        margin: 0;
+        color: $secondary-color;
+    }
+}
+
+.profile-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .form-group {
+        width: 48%;
+        margin-bottom: 15px;
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: $secondary-color;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+        }
+
+        .dob-group {
+            display: flex;
+            justify-content: space-between;
+
+            select {
+                width: 32%;
+            }
+        }
+    }
+
+    .profile-picture {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+
+        img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+
+        .edit-button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 5px 10px;
+            background-color: $primary-color;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    }
+
+    .change-password-button, .save-button, .add-payment-button, .remove-button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: $primary-color;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .save-button {
+        width: 100%;
+        margin-top: 20px;
+        background-color: $primary-color;
+    }
+
+    .payment-method {
+        display: flex;
+        align-items: center;
+
+        .card {
+            padding: 10px;
+            margin-right: 10px;
+            background-color: #f1f1f1;
+            border-radius: 4px;
+        }
+
+        .remove-button {
+            background-color: $secondary-color;
+        }
+    }
+}

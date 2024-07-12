@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+    <link rel="stylesheet" href="CSS/profile.css">
+</head>
+<body>
+    <div class="profile-container">
+        <div class="profile-header">
+            <h1>My profile</h1>
+            <h2>Edit Profile</h2>
+        </div>
+        <form class="profile-form">
+            <div class="profile-picture">
+                <img src="profile-picture.jpg" alt="Profile Picture">
+                <button class="edit-button">✎</button>
+            </div>
+            <div class="form-group">
+                <label for="first-name">First Name</label>
+                <input type="text" id="first-name"  required>
+            </div>
+            <div class="form-group">
+                <label for="last-name">Last Name</label>
+                <input type="text" id="last-name" >
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" >
+                <button class="change-password-button">CHANGE PASSWORD</button>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" >
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" >
+            </div>
+            <div class="form-group">
+                <label for="address">Address</label>
+                <input type="text" id="address">
+            </div>
+            <div class="form-group">
+                <label for="nation">Nation</label>
+                <input type="text" id="nation" >
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender</label>
+                <select id="gender">
+                    <option value="male" selected>Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="language">Language</label>
+                <select id="language">
+                    <option value="english" selected>English</option>
+                    <option value="spanish">Spanish</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="dob">Date of Birth</label>
+                <div class="dob-group">
+                    <select id="dob-month">
+                        <option value="" selected></option>
+                    </select>
+                    <select id="dob-day">
+                        <option value="" selected></option>
+                    </select>
+                    <select id="dob-year">
+                        <option value="" selected></option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="twitter">Twitter</label>
+                <input type="text" id="twitter">
+            </div>
+            <div class="form-group">
+                <label for="linkedin">LinkedIn</label>
+                <input type="text" id="linkedin">
+            </div>
+            <div class="form-group">
+                <label for="facebook">Facebook</label>
+                <input type="text" id="facebook">
+
+            <button class="save-button">Save</button>
+        </form>
+    </div>
+</body>
+</html>
