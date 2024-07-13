@@ -4,19 +4,20 @@ $light-gray: #f8f9fa;
 
 body {
     font-family: Arial, sans-serif;
-    background-color: $light-gray;
+    background-color:#f2f6fc;
 }
 
 .profile-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: white;
+    max-width: 750px;
+    margin: auto;
+    padding: 35px;
+    background-color: #fff;
     border-radius: 50px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+    box-shadow: 10px 10px 5px 10px rgba(0, 0, 0, 0.1);
+    font-weight: 60;
 
-.profile-header {
+.profile-header 
+{
     text-align: center;
     margin-bottom: 20px;
 
@@ -61,7 +62,7 @@ body {
             }
         }
     }
-
+}
     .profile-picture {
         width: 100%;
         text-align: center;
@@ -84,7 +85,7 @@ body {
             cursor: pointer;
         }
     }
-
+}
     .change-password-button, .save-button, .add-payment-button, .remove-button {
         display: inline-block;
         padding: 10px 20px;
@@ -96,7 +97,7 @@ body {
     }
 
     .save-button {
-        width: 100%;
+        width: 150%;
         margin-top: 20px;
         background-color: $primary-color;
     }
@@ -116,4 +117,4 @@ body {
             background-color: $secondary-color;
         }
     }
-}
+

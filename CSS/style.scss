@@ -5,9 +5,7 @@ $border-color: #e0e0e0;
 
 body {
     font-family: Arial, sans-serif;
-    
     background-color: $secondary-color;
-    background: linear-gradient(to right, #e2e2e2, #c9d6ff);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,7 +17,7 @@ body {
     display: flex;
     width: 800px;
     background-color: #fff;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 10px 10px 5px 5px rgba(0, 0, 0, 0.1);
     border-radius: 50px;
     overflow: hidden;
     font-weight: 60;
@@ -66,7 +64,7 @@ body {
             }
         }
     }
-
+}
     .login-container {
         background-color: $secondary-color;
         width: 50%;
@@ -87,4 +85,3 @@ body {
             }
         }
     }
-}
