@@ -57,7 +57,7 @@ body {
 }
 
 .profile-container .profile-form .form-group .dob-group select {
-  width: 32%;
+  width: 10%;
 }
 
 .profile-container .profile-picture {
@@ -94,7 +94,7 @@ body {
 }
 
 .save-button {
-  width: 150%;
+  width: 100%;
   margin-top: 20px;
   background-color: #0066ff;
 }

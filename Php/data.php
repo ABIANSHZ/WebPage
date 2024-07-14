@@ -1,26 +1,20 @@
 <?php
-include 'db.php';
+require 'db.php';
 
-$id = $_POST["id"];
-$password = $_POST["password"];
+// Fetch POST data
 $fullName = $_POST["fullName"];
 $mobileNumber = $_POST["mobileNumber"];
-$email = $_POST["emailAddress"];
+$emailAddress = $_POST["emailAddress"];
+$password = password_hash($_POST["password"], PASSWORD_DEFAULT); // Hash password for security
 
-// Insert user details into MySQL
-$stmt = $conn->prepare("INSERT INTO userDetails (id, password, fullName) VALUES (?, ?, ?)");
-$stmt->bind_param("sss", $id, $password, $fullName);
-$stmt->execute();
-echo "MySQL: inserted successfully";
+// Insert user details into MySQL using prepared statements
+$stmt = $conn->prepare("INSERT INTO userDetails (fullName, mobileNumber, emailAddress, password) VALUES (?, ?, ?, ?)");
+$stmt->bind_param("ssss", $fullName, $mobileNumber, $emailAddress, $password);
 
-// Insert additional user details into MongoDB
-$document = array(
-    '_id' => $id,
-    'password' => $password,
-    'fullName' => $fullName,
-    'mobileNumber' => $mobileNumber,
-    'emailAddress' => $email
-);
-$collection->insertOne($document);
-echo "MongoDB: inserted successfully";
-?>
+// Execute the statement and check for errors
+if ($stmt->execute()) {
+    echo "User registered successfully";
+} else {
+    echo "Error: " . $stmt->error;
+}
+
