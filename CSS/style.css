@@ -19,44 +19,44 @@ body {
   text-transform: uppercase;
 }
 
-.container .form-container {
+.container .formcontainer {
   padding: 55px;
   width: 50%;
 }
 
-.container .form-container h1 {
+.container .formcontainer h1 {
   margin: 0;
   color: #333;
 }
 
-.container .form-container p {
+.container .formcontainer p {
   color: #333;
   margin: 8px 0 24px;
 }
 
-.container .form-container form {
+.container .formcontainer form {
   display: flex;
   flex-direction: column;
 }
 
-.container .form-container form label {
+.container .formcontainer form label {
   margin-bottom: 10px;
   color: #333;
 }
 
-.container .form-container form input {
+.container .formcontainer form input {
   margin-bottom: 16px;
   padding: 12px;
   border: 1px solid #e0e0e0;
   border-radius: 10px;
 }
 
-.container .form-container form input:focus {
+.container .formcontainer form input:focus {
   border-color: #0066ff;
   outline: none;
 }
 
-.container .form-container form button {
+.container .formcontainer form button {
   padding: 12px;
   background-color: #0066ff;
   color: #fff;
@@ -65,7 +65,7 @@ body {
   cursor: pointer;
 }
 
-.container .form-container form button:hover {
+.container .formcontainer form button:hover {
   background-color: #0052cc;
 }
 

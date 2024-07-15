@@ -1,27 +1,31 @@
 <?php
-require 'db.php';
+include 'mongodb.php';
 
-// Start session to retrieve user ID
-session_start();
-if (!isset($_SESSION["userId"])) {
-    echo "User not logged in";
-    exit;
+$id = $_POST['id'];
+
+// Assuming you have established the MongoDB client and selected the database in mongodb.php
+// For example:
+// $client = new MongoDB\Client("mongodb://localhost:27017");
+// $db = $client->mydatabase;
+
+$collection = $db->userdata; // Replace 'mycollection' with your actual collection name
+
+// Fetch the user document by id
+$user = $collection->findOne(['_id' => $id], [
+    'projection' => [
+        'age' => 1,
+        'gender' => 1,
+        'mobile' => 1,
+        '_id'=> 1,
+        'fname' => 1,
+        'lname' => 1,
+        'dob'=>1
+    ]
+]);
+
+if ($user) {
+    echo json_encode($user);
+} else {
+    echo json_encode(['error' => 'User not found']);
 }
-
-$userId = $_SESSION["userId"];
-
-// Fetch user details from MySQL
-$stmt = $conn->prepare("SELECT fullName, mobileNumber, emailAddress FROM userDetails WHERE userId = ?");
-$stmt->bind_param("i", $userId);
-$stmt->execute();
-$stmt->bind_result($fullName, $mobileNumber, $emailAddress);
-$stmt->fetch();
-
-$userDetails = array(
-    'fullName' => $fullName,
-    'mobileNumber' => $mobileNumber,
-    'emailAddress' => $emailAddress
-);
-
-echo json_encode($userDetails); // Return user details as JSON
-
+?>

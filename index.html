@@ -9,24 +9,20 @@
 </head>
 <body>
     <div class="container">
-        <div class="form-container">
+        <div class="formcontainer">
             <h1>Create Account</h1><br>
-            <form id="registrationForm">
-                <div class="form-group">
-                    <label for="fullName">Full Name</label>
-                    <input type="text" id="fullName" name="fullName" class="form-control" placeholder="Full Name" required>
-                </div>
-                <div class="form-group">
-                    <label for="mobileNumber">Mobile Number</label>
-                    <input type="tel" id="mobileNumber" name="mobileNumber" class="form-control" placeholder="Mobile Number" required>
-                </div>
-                <div class="form-group">
-                    <label for="emailAddress">Email Address</label>
-                    <input type="email" id="emailAddress" name="emailAddress" class="form-control" placeholder="Email Address" required>
-                </div>
-                <div class="form-group">
+            <form action="login.html" class="form">
+                <div class="name">
+                    <label for="fName">First Name</label>
+                    <input type="text" id="fname" name="fname" class="form name" placeholder="Full Name" required>
+                    <label for="lastName">Last Name</label>
+                    <input type="text" id="lname" name="lastName" class="form name" placeholder="Mobile Number" required>
+                    <label for="emailid">Email Address</label>
+                    <input type="email" id="mail" name="form mail" class="form mail" placeholder="Email id" required>
                     <label for="password">Password</label>
-                    <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+                    <input type="password" id="setpassword" name="password" class="form password" placeholder="Password" required>
+                    <label for="confrim password">Confrim Password</label>
+                    <input type="password" id="confrimpassword" name="password" class="form password" placeholder="Confrim Password" required>
                 </div>
                 <button type="submit" class="btn btn-primary">Register</button>
             </form>
@@ -38,6 +34,6 @@
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="JS/script.js"></script>
+    <script src="JS/register.js"></script>
 </body>
 </html>
