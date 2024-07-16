@@ -10,28 +10,30 @@ body {
 
 .container {
   display: flex;
-  width: 800px;
+  width: 600px;
   background-color: #fff;
   box-shadow: 10px 10px 5px 5px rgba(0, 0, 0, 0.1);
-  border-radius: 50px;
+  border-radius: 40px;
   overflow: hidden;
-  font-weight: 60;
+  font-weight: 600;
   text-transform: uppercase;
 }
 
 .container .formcontainer {
-  padding: 55px;
+  padding: 30px 20px;
   width: 50%;
 }
 
 .container .formcontainer h1 {
   margin: 0;
   color: #333;
+  font-size: 1.7em;
 }
 
 .container .formcontainer p {
   color: #333;
-  margin: 8px 0 24px;
+  margin: 8px 0 16px;
+  font-size: 0.9em;
 }
 
 .container .formcontainer form {
@@ -40,15 +42,17 @@ body {
 }
 
 .container .formcontainer form label {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   color: #333;
+  font-size: 0.9em;
 }
 
 .container .formcontainer form input {
-  margin-bottom: 16px;
-  padding: 12px;
+  margin-bottom: 12px;
+  padding: 10px;
   border: 1px solid #e0e0e0;
   border-radius: 10px;
+  font-size: 0.9em;
 }
 
 .container .formcontainer form input:focus {
@@ -57,38 +61,42 @@ body {
 }
 
 .container .formcontainer form button {
-  padding: 12px;
+  padding: 10px;
   background-color: #0066ff;
   color: #fff;
   border: none;
   border-radius: 10px;
   cursor: pointer;
+  font-size: 0.9em;
 }
 
 .container .formcontainer form button:hover {
   background-color: #0052cc;
 }
 
-.login-container {
+.container .login-container {
   background-color: #f2f6fc;
   width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 35px;
 }
 
-.login-container p {
+.container .login-container p {
   margin: 0;
   color: #333;
+  font-size: 0.9em;
 }
 
-.login-container a {
+.container .login-container a {
   margin-top: 8px;
   color: #0066ff;
   text-decoration: none;
+  font-size: 0.9em;
 }
 
-.login-container a:hover {
+.container .login-container a:hover {
   text-decoration: underline;
 }

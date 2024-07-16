@@ -15,56 +15,60 @@ body {
 
 .container {
     display: flex;
-    width: 800px;
+    width: 600px; // Reduced the width
     background-color: #fff;
     box-shadow: 10px 10px 5px 5px rgba(0, 0, 0, 0.1);
-    border-radius: 50px;
+    border-radius: 40px; // Adjusted the border-radius to fit the smaller size
     overflow: hidden;
-    font-weight: 60;
+    font-weight: 600;
     text-transform: uppercase;
 
     .formcontainer {
-        padding: 55px;
+        padding: 30px 20px; // Adjusted the padding to fit the smaller container
         width: 50%;
         h1 {
             margin: 0;
             color: $text-color;
+            font-size: 1.7em; // Adjusted font-size to fit the smaller container
         }
         p {
             color: $text-color;
-            margin: 8px 0 24px;
+            margin: 8px 0 16px; // Adjusted margin to fit the smaller container
+            font-size: 0.9em; // Adjusted font-size to fit the smaller container
         }
         form {
             display: flex;
             flex-direction: column;
             label {
-                margin-bottom: 10px;
+                margin-bottom: 5px; // Adjusted margin to fit the smaller container
                 color: $text-color;
+                font-size: 0.9em; // Adjusted font-size to fit the smaller container
             }
             input {
-                margin-bottom: 16px;
-                padding: 12px;
+                margin-bottom: 12px; // Adjusted margin to fit the smaller container
+                padding: 10px; // Adjusted padding to fit the smaller container
                 border: 1px solid $border-color;
                 border-radius: 10px;
+                font-size: 0.9em; // Adjusted font-size to fit the smaller container
                 &:focus {
                     border-color: $primary-color;
                     outline: none;
                 }
             }
             button {
-                padding: 12px;
+                padding: 10px; // Adjusted padding to fit the smaller container
                 background-color: $primary-color;
                 color: #fff;
                 border: none;
                 border-radius: 10px;
                 cursor: pointer;
+                font-size: 0.9em; // Adjusted font-size to fit the smaller container
                 &:hover {
                     background-color: darken($primary-color, 10%);
                 }
             }
         }
     }
-}
     .login-container {
         background-color: $secondary-color;
         width: 50%;
@@ -72,16 +76,20 @@ body {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        padding: 35px; // Added padding to fit the smaller container
         p {
             margin: 0;
             color: $text-color;
+            font-size: 0.9em; // Adjusted font-size to fit the smaller container
         }
         a {
             margin-top: 8px;
             color: $primary-color;
             text-decoration: none;
+            font-size: 0.9em; // Adjusted font-size to fit the smaller container
             &:hover {
                 text-decoration: underline;
             }
         }
     }
+}
