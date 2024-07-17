@@ -1,9 +1,10 @@
 $(document).ready(function () {
     const userEmail = localStorage.getItem('userEmail');
+    console.log(userEmail);
     if (userEmail) {
         // Fetch user information
         $.ajax({
-            url: '../php/profile.php',
+            url: '../Php/profile.php',
             type: 'POST',
             data: { id: userEmail },
             success: function (data) {
@@ -49,7 +50,7 @@ $(document).ready(function () {
 
             $.ajax({
                 type: 'POST',
-                url: '../php/update.php',
+                url: '../Php/update.php',
                 data: {
                     id: userEmail,
                     fname: fname,

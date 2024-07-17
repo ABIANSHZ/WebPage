@@ -12,7 +12,7 @@ class UserManager {
     }
 
     public function userExistsInMySQL($id) {
-        $stmt = $this->mysqlConnection->prepare("SELECT PersonId FROM Myuser WHERE PersonId = ?");
+        $stmt = $this->mysqlConnection->prepare("SELECT id FROM userdetails WHERE id = ?");
         $stmt->bind_param("s", $id);
         $stmt->execute();
         $stmt->store_result();

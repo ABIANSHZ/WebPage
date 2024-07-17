@@ -9,7 +9,7 @@ class User {
     }
 
     public function authenticate($email, $password) {
-        $query = "SELECT PersonPassword FROM myuser WHERE PersonId = ?";
+        $query = "SELECT ppassword FROM userdetails WHERE id = ?";
         if ($stmt = $this->con->prepare($query)) {
             $stmt->bind_param("s", $email);
             $stmt->execute();
@@ -30,8 +30,8 @@ class User {
 }
 
 // Get the email and password from POST request
-$email = isset($_POST['mail']) ? $_POST['mail'] : '';
-$password = isset($_POST['password']) ? $_POST['password'] : '';
+$email = $_POST['mail'] ;
+$password = $_POST['password'];
 
 // Instantiate the User class and call the authenticate method
 $user = new User($con);

@@ -9,7 +9,7 @@ $("#sbt-btn").click(function () {
     console.log(email, password);
     $.ajax({
         type: 'POST',
-        url: '../php/login.php',
+        url: '../Php/login.php',
         data: { mail: email, password: password },
         success: function (data) {
             if (data == 'true') {

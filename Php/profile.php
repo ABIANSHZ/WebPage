@@ -8,7 +8,7 @@ $id = $_POST['id'];
 // $client = new MongoDB\Client("mongodb://localhost:27017");
 // $db = $client->mydatabase;
 
-$collection = $db->details; // Replace 'mycollection' with your actual collection name
+$collection = $db->userdata; // Replace 'mycollection' with your actual collection name
 
 // Fetch the user document by id
 $user = $collection->findOne(['_id' => $id], [
