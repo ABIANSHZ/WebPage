@@ -54,7 +54,7 @@ $("#sbt-btn").click(function () {
         data: { mail: this.id, password: this.confirmpass, fname: this.fname, lname: this.lname },
         success: function (data) {
             localStorage.setItem('userEmail', data);
-            window.location.href = '../profile.html';
+            window.location.href = '../login.html';
         }
     });
 });

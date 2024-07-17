@@ -28,4 +28,3 @@ if ($user) {
 } else {
     echo json_encode(['error' => 'User not found']);
 }
-?>

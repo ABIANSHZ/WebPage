@@ -40,4 +40,3 @@ if ($user->authenticate($email, $password)) {
 } else {
     echo 'false';
 }
-?>

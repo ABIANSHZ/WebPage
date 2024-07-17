@@ -25,7 +25,7 @@ class UserManager {
     }
 
     public function insertUserInMySQL($id, $password) {
-        $stmt = $this->mysqlConnection->prepare("INSERT INTO userdetails(PersonId, PersonPassword) VALUES (?, ?)");
+        $stmt = $this->mysqlConnection->prepare("INSERT INTO userdetails(id, password) VALUES (?, ?)");
         $stmt->bind_param("ss", $id, $password);
         $stmt->execute();
         $stmt->close();
@@ -48,4 +48,3 @@ $lname = $_POST['lname'];
 $userManager->registerUser($id, $password, $fname, $lname);
 
 $con->close();
-?>
