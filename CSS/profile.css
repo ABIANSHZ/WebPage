@@ -61,8 +61,6 @@ table td {
   /* Prevent the input field from extending vertically */
   white-space: nowrap;
   /* Prevent the text from wrapping */
-  text-overflow: ellipsis;
-  /* Add ellipsis for overflowed text */
 }
 
 .data:focus {

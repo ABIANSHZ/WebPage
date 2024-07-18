@@ -60,7 +60,6 @@ table {
     box-sizing: border-box;
     overflow: hidden; /* Prevent the input field from extending vertically */
     white-space: nowrap; /* Prevent the text from wrapping */
-    text-overflow: ellipsis; /* Add ellipsis for overflowed text */
     &:focus {
         border-color: $primary-color;
         outline: none;
