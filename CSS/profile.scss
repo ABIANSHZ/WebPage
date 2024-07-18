@@ -15,12 +15,15 @@ body {
 
 .container {
     background-color: #fff;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
+    box-shadow: 10px 10px 5px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 40px;
     overflow: hidden;
     padding: 20px;
     max-width: 600px;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 header {
@@ -34,16 +37,18 @@ header {
 table {
     width: 100%;
     border-collapse: collapse;
+    table-layout: fixed;
     th, td {
         padding: 10px;
         text-align: left;
+        word-wrap: break-word;
     }
     th {
         width: 25%;
         color: $text-color;
     }
     td {
-        width: 25%;
+        width: 75%; /* Ensure the input fields take the remaining space */
     }
 }
 
@@ -51,6 +56,11 @@ table {
     padding: 10px;
     border: 1px solid $border-color;
     border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden; /* Prevent the input field from extending vertically */
+    white-space: nowrap; /* Prevent the text from wrapping */
+    text-overflow: ellipsis; /* Add ellipsis for overflowed text */
     &:focus {
         border-color: $primary-color;
         outline: none;
@@ -70,16 +80,19 @@ select.data {
 
 button.edit {
     margin-top: 20px;
-    width: 100%;
+    width: 30%;
     padding: 10px;
     background-color: $primary-color;
     color: #fff;
     border: none;
-    border-radius: 5px;
+    border-radius: 20px;
     cursor: pointer;
     text-transform: uppercase;
     font-size: 1em;
     &:hover {
         background-color: darken($primary-color, 10%);
     }
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
