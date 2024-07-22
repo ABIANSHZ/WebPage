@@ -1,4 +1,8 @@
+```php
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 include 'mongodb.php';
 include 'db.php';
 
@@ -38,10 +42,15 @@ class UserManager {
         echo $id;
     }
 }
-$id = $_POST['mail'];
-$password = $_POST['password'];
-$fname = $_POST['fname'];
-$lname = $_POST['lname'];
-$userManager = new UserManager($db->userdata, $con);
-$userManager->registerUser($id, $password, $fname, $lname);
-$con->close();
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $id = $_POST['mail'];
+    $password = $_POST['password'];
+    $fname = $_POST['fname'];
+    $lname = $_POST['lname'];
+    $userManager = new UserManager($db->userdata, $con);
+    $userManager->registerUser($id, $password, $fname, $lname);
+    $con->close();
+}
+?>
+```
