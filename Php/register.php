@@ -1,4 +1,4 @@
-```php
+
 <?php
 
 include 'mongodb.php';
@@ -51,4 +51,3 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $con->close();
 }
 ?>
-```
