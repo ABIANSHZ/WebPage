@@ -1,12 +1,14 @@
 $(document).ready(function () {
-    const userEmail = localStorage.getItem('userEmail');
-    console.log(userEmail);
-    if (userEmail) {
+    const token = localStorage.getItem('session_token');
+    const email = localStorage.getItem('email');
+    console.log(token);
+    console.log(email);
+    if (token) {
         // Fetch user information
         $.ajax({
             url: '../Php/profile.php',
             type: 'POST',
-            data: { id: userEmail },
+            data: { id: email, token: token },
             success: function (data) {
                 data = JSON.parse(data);
                 if (data.error) {

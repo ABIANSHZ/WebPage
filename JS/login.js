@@ -1,23 +1,31 @@
 const form = document.querySelector('form');
 form.addEventListener('submit', function (event) {
     event.preventDefault();
-})
+});
 
 $("#sbt-btn").click(function () {
     const email = $("#mail").val();
     const password = $("#password").val();
-    console.log(email, password);
+    let data = `mail=${email}&password=${password}`;
+    console.log(data);
+
     $.ajax({
         type: 'POST',
         url: '../Php/login.php',
-        data: { mail: email, password: password },
-        success: function (data) {
-            if (data == 'true') {
-                localStorage.setItem('userEmail', email);
+        data: data,
+        success: function (response) {
+            const data = JSON.parse(response);
+            if (data.status === 'success') {
+                const token = data.token;
+                localStorage.setItem('session_token', token);
+                localStorage.setItem('email', email);
                 window.location.href = '../profile.html';
             } else {
-                document.getElementById('result').innerHTML = "invalid UserId or Password";
+                document.getElementById('result').innerHTML = "Invalid UserId or Password";
             }
+        },
+        error: function () {
+            document.getElementById('result').innerHTML = "An error occurred during login.";
         }
-    })
+    });
 });

@@ -1,17 +1,28 @@
 <?php
 include 'mongodb.php';
+require '../vendor/autoload.php';
 
-$id = $_POST['id'];
+
+$token = $_POST['token'];
+
+$redis = new Predis\Client([
+    'scheme' => 'tcp',
+    'host' => '127.0.0.7',
+    'port' => 6379,
+]);
+
+$email = $redis->get("session:$token");
 
 // Assuming you have established the MongoDB client and selected the database in mongodb.php
 // For example:
 // $client = new MongoDB\Client("mongodb://localhost:27017");
 // $db = $client->mydatabase;
 
-$collection = $db->userdata; // Replace 'mycollection' with your actual collection name
+if ($email) {
+    $collection = $db->userdata; // Replace 'mycollection' with your actual collection name
 
 // Fetch the user document by id
-$user = $collection->findOne(['_id' => $id], [
+$user = $collection->findOne(['_id' => $email], [
     'projection' => [
         'age' => 1,
         'gender' => 1,
@@ -22,6 +33,8 @@ $user = $collection->findOne(['_id' => $id], [
         'dob'=>1
     ]
 ]);
+}
+
 
 if ($user) {
     echo json_encode($user);
