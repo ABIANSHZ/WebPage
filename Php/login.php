@@ -65,4 +65,3 @@ if ($response) {
 } else {
     echo json_encode(['status' => 'error', 'message' => 'Invalid']);
 }
-?>

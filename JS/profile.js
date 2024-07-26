@@ -3,12 +3,14 @@ $(document).ready(function () {
     const email = localStorage.getItem('email');
     console.log(token);
     console.log(email);
+    let data = `email=${email}&token=${token}`;
+    console.log(data);
     if (token) {
         // Fetch user information
         $.ajax({
             url: '../Php/profile.php',
             type: 'POST',
-            data: { id: email, token: token },
+            data: data,
             success: function (data) {
                 data = JSON.parse(data);
                 if (data.error) {

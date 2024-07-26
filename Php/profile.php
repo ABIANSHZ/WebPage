@@ -2,7 +2,6 @@
 include 'mongodb.php';
 require '../vendor/autoload.php';
 
-
 $token = $_POST['token'];
 
 $redis = new Predis\Client([
