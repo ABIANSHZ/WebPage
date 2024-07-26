@@ -38,7 +38,7 @@ class User {
     private function generateSessionToken($userid){
         $sessionToken = bin2hex(random_bytes(32));
         $this->redis->set("session:$sessionToken", $userid);
-        $this->redis->expire("session:$sessionToken", 3600);
+        $this->redis->expire("session:$sessionToken", 900);
         return [
             'status' => 'success',
             'token' => $sessionToken
