@@ -2,7 +2,7 @@
 include 'mongodb.php';
 require '../vendor/autoload.php';
 
-$token = $_POST['token'];
+$token = $_GET['token'];
 
 $redis = new Predis\Client([
     'scheme' => 'tcp',
@@ -19,6 +19,10 @@ $email = $redis->get("session:$token");
 
 if ($email) {
     $collection = $db->userdata; // Replace 'mycollection' with your actual collection name
+} else {
+    echo json_encode(['error' => 'Session expired']);
+    exit;
+}
 
 // Fetch the user document by id
 $user = $collection->findOne(['_id' => $email], [
@@ -32,7 +36,7 @@ $user = $collection->findOne(['_id' => $email], [
         'dob'=>1
     ]
 ]);
-}
+
 
 
 if ($user) {

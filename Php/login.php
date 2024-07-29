@@ -1,7 +1,4 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
 
 require '../vendor/autoload.php';
 include 'db.php';
@@ -38,7 +35,7 @@ class User {
     private function generateSessionToken($userid){
         $sessionToken = bin2hex(random_bytes(32));
         $this->redis->set("session:$sessionToken", $userid);
-        $this->redis->expire("session:$sessionToken", 900);
+        $this->redis->expire("session:$sessionToken", 15);
         return [
             'status' => 'success',
             'token' => $sessionToken

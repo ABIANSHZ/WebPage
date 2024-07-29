@@ -9,19 +9,21 @@ $(document).ready(function () {
         // Fetch user information
         $.ajax({
             url: '../Php/profile.php',
-            type: 'POST',
+            type: 'GET',
             data: data,
             success: function (data) {
                 data = JSON.parse(data);
                 if (data.error) {
                     console.log(data.error);
+                    window.location.href = 'login.html';
                 } else {
+                    console.log(data);
                     $('#fname').text(data.fname);
                     $('#lname').text(data.lname);
                     $('#age').text(data.age);
                     $('#gender').val(data.gender);
-                    $('#mailid').text(data._id);
-                    $('#mobile').text(data.mobile);
+                    $('#mailid').val(data._id);
+                    $('#mobile').val(data.mobile);
                     $('#dob').val(data.dob);
                 }
             },
@@ -39,11 +41,12 @@ $(document).ready(function () {
             var year = new Date(dob).getFullYear();
             var curryear = new Date().getFullYear();
             const age = curryear - year;
+            const userEmail = $('#mailid').val();
             const gender = $('#gender').val();
-            const mobile = $('#mobile').text();
+            const mobile = $('#mobile').val();
 
             // Validate mobile number length
-            if (mobile.length !== 10) {
+            if (mobile.length != 10) {
                 $('#status').text('Mobile number must be exactly 10 digits long.').css('color', 'red');
                 return;
             }
