@@ -90,6 +90,14 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
+        // url = '../Php/idvalidate.php';
+        // option = {
+            // method: POST,
+            // body: { mail: email }
+        //}
+
+        // fetch(url, option).then((res)=> res.json()).then(fun)
+
         $.ajax({
             type: 'POST',
             url: '../Php/idvalidate.php',
